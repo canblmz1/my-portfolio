@@ -1,0 +1,192 @@
+@import 'variables';
+@import 'animations';
+
+// Reset and base styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  background-color: $light-color;
+  color: $dark-color;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+  font-weight: $font-weight-bold;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-base;
+  
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+// Utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $spacing-md;
+  }
+}
+
+.section {
+  padding: $spacing-xl 0;
+  
+  &-title {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xl;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      background: $primary-color;
+      bottom: -10px;
+      left: 0;
+      border-radius: 2px;
+    }
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  background-color: $primary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  border: none;
+  transition: $transition-base;
+  text-align: center;
+  
+  &:hover, &:focus {
+    background-color: darken($primary-color, 10%);
+    color: $white;
+    transform: translateY(-2px);
+    box-shadow: $shadow;
+  }
+  
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover, &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+  
+  &.btn-dark {
+    background-color: $dark-color;
+    
+    &:hover, &:focus {
+      background-color: lighten($dark-color, 10%);
+    }
+  }
+  
+  &.btn-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.main-content {
+  min-height: calc(100vh - 160px); // Adjust based on navbar and footer height
+  padding-top: 80px; // Account for fixed navbar
+}
+
+// Grid system - simplified flexbox based
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0 15px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+// Responsive utilities
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+@media (min-width: $breakpoint-md) {
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .d-md-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .d-lg-none {
+    display: none !important;
+  }
+  
+  .d-lg-block {
+    display: block !important;
+  }
+}

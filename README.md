@@ -1,3 +1,23 @@
+# Cuma Can Bilmez - Portfolio
+
+Bu repo benim kişisel portfolio web sitemdir.
+
+## Teknolojiler
+- React 18.2
+- SCSS
+- Framer Motion
+- React Router DOM
+
+## Özellikler
+- E-ticaret 2040 projesi
+- Responsive tasarım
+- Modern animasyonlar
+
+## Canlı Demo
+[Portfolio Sitesi](https://canblmz1.github.io/cuma-portfolio)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
